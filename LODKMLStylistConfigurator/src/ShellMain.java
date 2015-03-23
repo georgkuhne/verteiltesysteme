@@ -25,27 +25,6 @@ public class ShellMain extends Shell {
 	CompositeConfig cAltlasten;
 	CompositeConfig cBundestraﬂen;
 
-	/**
-	 * Launch the application.
-	 * 
-	 * @param args
-	 */
-	public static void main(String args[]) {
-		try {
-			Display display = Display.getDefault();
-			ShellMain shell = new ShellMain(display);
-			shell.open();
-			shell.layout();
-			while (!shell.isDisposed()) {
-				if (!display.readAndDispatch()) {
-					display.sleep();
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public void open() {
 		super.open();
 		loadProperties();
