@@ -182,15 +182,14 @@ public class ProgressTransformation {
 		Placemark dach = (Placemark) gebaeudefolder.getFeature().get(0);
 		dach.setStyleUrl(styledachBundesStrassen.getId());
 		Placemark wand = (Placemark) gebaeudefolder.getFeature().get(1);
-		wand.setStyleUrl(styledachBundesStrassen.getId());
+		wand.setStyleUrl(stylewandBundesStrassen.getId());
 		bundesStrassenexport.add(gebaeudefolder);
 	}
 
 	private void umarshallAltlasten() {
 		styledachAltlasten = new Style();
 		styledachAltlasten.setId("dachstyle");
-		PolyStyle polystyledach = styledachBundesStrassen
-				.createAndSetPolyStyle();
+		PolyStyle polystyledach = styledachAltlasten.createAndSetPolyStyle();
 
 		polystyledach.setColor(Model.getInstance().getDachfarbeAltlasten());
 		styledachAltlasten.createAndSetLineStyle().setColor(
@@ -199,8 +198,7 @@ public class ProgressTransformation {
 
 		stylewandAltlasten = new Style();
 		stylewandAltlasten.setId("wandstyle");
-		PolyStyle polystylewand = styledachBundesStrassen
-				.createAndSetPolyStyle();
+		PolyStyle polystylewand = stylewandAltlasten.createAndSetPolyStyle();
 		polystylewand.setColor(Model.getInstance().getWandfarbeAltlasten());
 		polystylewand.setFill(true);
 		stylewandAltlasten.setPolyStyle(polystylewand);
@@ -239,7 +237,7 @@ public class ProgressTransformation {
 		styledachBundesStrassen.setPolyStyle(polystyledach);
 		stylewandBundesStrassen = new Style();
 		stylewandBundesStrassen.setId("wandstyle");
-		PolyStyle polystylewand = styledachBundesStrassen
+		PolyStyle polystylewand = stylewandBundesStrassen
 				.createAndSetPolyStyle();
 		polystylewand
 				.setColor(Model.getInstance().getWandfarbeBundesstrassen());
