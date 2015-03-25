@@ -147,7 +147,7 @@ public class ProgressTransformation {
 		Placemark dach = (Placemark) gebaeudefolder.getFeature().get(0);
 		dach.setStyleUrl(styledachAltlasten.getId());
 		Placemark wand = (Placemark) gebaeudefolder.getFeature().get(1);
-		wand.setStyleUrl(styledachAltlasten.getId());
+		wand.setStyleUrl(stylewandAltlasten.getId());
 		altlastenexport.add(gebaeudefolder);
 	}
 
